@@ -59,6 +59,9 @@ class Board {
   String folder = "TEST";
   final double FLASH_SPEED = 80;
   boolean userControl;
+  int brainx = -840;
+  int brainy = 15;
+  int brainFontSize = 30;
 
 
 
@@ -283,10 +286,10 @@ class Board {
           "\nI, K: Change mouth color\nB: Give birth (Not possible if under " + Math.round((MANUAL_BIRTH_SIZE + 1) * 100) + " yums)", 10, 625, 250, 400);
       }
       pushMatrix();
-      translate(400, 80);
+      translate(brainx, brainy);
       float apX = round((mouseX - 400 - x1) / 46.0);
       float apY = round((mouseY - 80 - y1) / 46.0);
-      selectedCreature.drawBrain(font, 46, (int)apX, (int)apY);
+      selectedCreature.drawBrain(font, brainFontSize, (int)apX, (int)apY);
       popMatrix();
     }
     drawPopulationGraph(x1, x2, y1, y2);
